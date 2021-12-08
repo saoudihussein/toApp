@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+      <ion-img class="img" src="../../assets/log.png"></ion-img>
+      
+  <div class="form">
+    <div class="input-group">
+    <ion-item >
+      <ion-label position="floating"><ion-icon name="mail"></ion-icon>Email</ion-label>
+      <ion-input #emailControl="ngModel" [email]="true"  type="email" [(ngModel)]='email' required></ion-input>
+    </ion-item>
+    <ion-item>
+      <div *ngIf="emailControl.invalid && (emailControl.dirty || emailControl.touched)">
+        <div *ngIf="emailControl.errors.required">
+          <small style="color:red">
+            Saisir votre email
+          </small>
+        </div>
+        <div *ngIf="emailControl.errors.email">
+          <small style="color:red">
+            Email invalide
+          </small>
+        </div>
+      </div>
+    </ion-item>
+    
+
+    <ion-item>
+      <ion-label position="floating"><ion-icon name="key"></ion-icon>Password</ion-label>
+      <ion-input type="password" #passwordControl="ngModel"  [(ngModel)]='password' required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <div *ngIf="passwordControl.invalid && (passwordControl.dirty || passwordControl.touched)">
+        <div *ngIf="passwordControl.errors.required">
+          <small style="color:red">
+            Saisir votre mot de passe
+          </small>
+        </div>
+      </div>
+    </ion-item>
+    
+
+    <ion-button color="danger"  expand="block" class="login_Button" (click)='login()' >SIGN IN</ion-button>
+    <ion-button color="success"  class="signup_button" (click)='signup()' >Register</ion-button>
+    <ion-button color="primary"  class="forgot_button" >FORGOT PASSWORD</ion-button>
+  </div>
+</div>
+
+</ion-content>

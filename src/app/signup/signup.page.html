@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title>REGISTER</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-img class="img" src="../../assets/log.png"></ion-img>
+
+  <div class="form">
+    <div class="input-group">
+    <ion-item>
+      <ion-label position="floating"><ion-icon name="person"></ion-icon>Name</ion-label>
+      <ion-input [(ngModel)]='name'></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"><ion-icon name="mail"></ion-icon>Email</ion-label>
+      <ion-input [(ngModel)]='email'></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"><ion-icon name="key"></ion-icon>Password</ion-label>
+      <ion-input [(ngModel)]='password'></ion-input>
+    </ion-item>
+    <ion-button (click)='signup()' expand='block'>REGISTER</ion-button>
+  </div>
+</div>
+</ion-content>
